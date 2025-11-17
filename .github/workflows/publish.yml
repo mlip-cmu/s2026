@@ -29,7 +29,7 @@ jobs:
           SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
       run: |
         echo $GDOC_CREDENTIALS > credentials.json
-        SPREADSHEET_ID="$SPREADSHEET_ID" SEMESTER=f2025 node .tools/schedulegen/index.js > schedule.md
+        SPREADSHEET_ID="$SPREADSHEET_ID" SEMESTER=s2026 node .tools/schedulegen/index.js > schedule.md
         node .tools/webgen/index.js README.md schedule.md > _site/index.html
         cp *.svg _site/
         cp *.png _site/
