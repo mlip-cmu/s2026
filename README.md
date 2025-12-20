@@ -1,4 +1,4 @@
-# # Machine Learning in Production (17-445/17-645/17-745) / AI Engineering (11-695)
+# Machine Learning in Production (17-445/17-645/17-745) / AI Engineering (11-695)
 
 ### Spring 2026
 
