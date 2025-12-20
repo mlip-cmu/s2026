@@ -18,30 +18,14 @@ const fs = require('fs');
     const spreadsheetId = process.env.SPREADSHEET_ID;
     if (!spreadsheetId)
         throw new Error("SPREADSHEET_ID not set");
-    const generatedSlidesDir = process.env.STATIC_DIR || "lectures/_static"
     const labDir = process.env.LAB_DIR || "labs"
-    const semesterRepo = process.env.SEMESTER || "f2024"
+    const semesterRepo = process.env.SEMESTER || "s2026"
 
-    const prefix = "| Date  | Topic | [Book Chapter](https://mlip-cmu.github.io/book/) | Reading | Assignment due |\n| -     | -     | -     | -       | -              |"
+    const prefix = "| Date  | Topic | [Book Chapter](https://mlip-cmu.github.io/book/) | Assignment due |\n| -     | -     | -     | -       | -              |"
     console.log(prefix)
 
 
-    function findSlidesLink(id) {
-        if (id === undefined || id == "")
-            return undefined
-
-        const files = fs.readdirSync(generatedSlidesDir);
-        const prefix = id.toString().padStart(2, '0') + '_';
-        const slideDirectory = files.find(file => file.startsWith(prefix));
-        if (slideDirectory === undefined)
-            return undefined
-
-        const htmlFile = fs.readdirSync(generatedSlidesDir + "/" + slideDirectory).find(file => file.endsWith(".html"));
-        if (htmlFile === undefined)
-            return undefined
-
-        return `${slideDirectory}/${htmlFile}`
-    }
+ 
     function findLabLink(id) {
         if (id === undefined || id == "")
             return undefined
@@ -118,7 +102,7 @@ const fs = require('fs');
                         }
                     }
 
-                    console.log(`| ${date} | ${badges}${topic} | ${chapterLinks} | ${readings} | ${assignment} |`)
+                    console.log(`| ${date} | ${badges}${topic} | ${chapterLinks} | ${assignment} |`)
 
                 }
             });
