@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machine Learning in Production</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      font-size: 1.5rem;
+      background: #fafafa;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    .container {
+      max-width: 900px; 
+    }
+    @media (min-width: 1500px) {
+      nav .navbar-brand .navbar-item {
+        font-size: 4rem;
+      }
+    }
+    html { scroll-behavior: smooth; }
+    main { margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <nav class="navbar is-danger" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+          <strong>Machine Learning in Production</strong><br />
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navbarBasic" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="#schedule">Schedule</a>
+          <a class="navbar-item" href="#course-syllabus-and-policies">Syllabus</a>
+          <a class="navbar-item" href="">Canvas</a>
+          <a class="navbar-item" href="https://github.com/mlip-cmu/f2025" target="_blank" rel="noopener">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main class="container">
+    
+    
+    <section class="section" id="machine-learning-in-production-17-445-17-645-17-745-ai-engineering-11-695">
+      <div class="card">
+        <div class="card-content">
+          <h2 class="title is-2 has-text-danger"># Machine Learning in Production (17-445/17-645/17-745) / AI Engineering (11-695)</h2>
+          <div class="content">
+          <h3 class="is-size-4">Spring 2026</h3><p>CMU course that covers how to build, deploy, assure, and maintain software products with machine-learned models. Includes the entire lifecycle from a prototype ML model to an entire system deployed in production. Covers also <strong>responsible AI</strong> (including safety, security, fairness, explainability) and <strong>MLOps</strong>. For earlier offerings see websites for <a href="https://ckaestne.github.io/seai/F2019">Fall 2019</a>, <a href="https://ckaestne.github.io/seai/S2020">Summer 2020</a>, <a href="https://ckaestne.github.io/seai/F2020/">Fall 2020</a>, <a href="https://ckaestne.github.io/seai/S2021/">Spring 2021</a>  <a href="https://ckaestne.github.io/seai/S2022/">Spring 2022</a>, <a href="https://ckaestne.github.io/seai/F2022/">Fall 2022</a>, <a href="https://github.com/mlip-cmu/s2023">Spring 2023</a>, <a href="https://github.com/mlip-cmu/s2024">Spring 2024</a>,  <a href="https://github.com/mlip-cmu/f2024">Fall 2024</a>, <a href="https://github.com/mlip-cmu/s2025">Spring 2025</a>, and <a href="https://github.com/mlip-cmu/f2025">Fall 2025</a>. This Spring 2026 offering is designed for students with some data science experience (e.g., has taken a machine learning course, has used sklearn) and basic programming skills (e.g., basic Python programming with libraries, can navigate a Unix shell), but will not expect a software engineering background (i.e., experience with testing, requirements, architecture, process, or teams is not required). Going forward we expect to offer this course both in the spring and in the fall semester.</p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  
+
+    <section class="section" id="resources">
+      <div class="card">
+        <div class="card-content">
+          <h2 class="title is-2 has-text-danger">Resources</h2>
+          <div class="content">
+          <p>For researchers, educators, or others interested in this topic, we share all course material, including slides and assignments, under a creative commons license on GitHub (<a href="https://github.com/mlip-cmu">https://github.com/mlip-cmu</a>) and have also published a <a href="https://mlip-cmu.github.io/book/">textbook</a> with chapters corresponding to almost every lecture. A while ago we also wrote an article describing the rationale and the initial design of this course: <a href="https://arxiv.org/abs/2001.06691">Teaching Software Engineering for AI-Enabled Systems</a>. Video recordings of the Summer 2020 offering are online on the <a href="https://ckaestne.github.io/seai/S2020/#course-content">course page</a>, though they are quite outdated by now. We would be happy to see this course or a similar version taught at other universities. See also an <a href="https://github.com/ckaestne/seaibib">annotated bibliography</a> on research in this field.</p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  
+
+    <section class="section" id="what-to-expect">
+      <div class="card">
+        <div class="card-content">
+          <h2 class="title is-2 has-text-danger">What to Expect...</h2>
+          <div class="content">
+          <p>This is a course for those who want to build <strong>software products</strong> with <strong>machine learning</strong>, not just models and demos. We assume that you can train a model or build prompts to make predictions, but what does it take to turn the model into a product and actually deploy it, have confidence in its quality, and successfully operate and maintain it at scale? </p>
+<p>The course is designed to establish a working relationship between <strong>software engineers</strong> and <strong>data scientists</strong>: both contribute to building ML-enabled systems but have different expertise and focuses. To work together they need a mutual understanding of their roles, tasks, concerns, and goals and build a working relationship. This course is aimed at <strong>software engineers</strong> who want to build robust and responsible products meeting the specific challenges of working with ML components and at <strong>data scientists</strong> who want to understand the requirements of the model for production use and want to facilitate getting a prototype model into production; it facilitates communication and collaboration between both roles. The course is a good fit for student looking at a career as an <strong>ML engineer</strong>. <em>The course focuses on all the steps needed to turn a model into a production system in a responsible and reliable manner.</em></p>
+<p><img src="overview.svg" alt="Course overview"></p>
+<p>It covers topics such as:</p>
+<ul>
+<li><strong>How to design for wrong predictions the model may make?</strong> How to assure <em>safety</em> and <em>security</em> despite possible mistakes? How to design the <em>user interface</em> and the entire system to operate in the real world?</li>
+<li><strong>How to reliably deploy and update models in production?</strong> How can we <em>test</em> the entire machine learning pipeline? How can <em>MLOps</em> tools help to automate and scale the deployment process? How can we <em>experiment in production</em> (A/B testing, canary releases)? How do we detect <em>data quality</em> issues, <em>concept drift</em>, and <em>feedback loops</em> in production?</li>
+<li><strong>How to scale production ML systems?</strong> How do we design a system to process huge amounts of training data, telemetry data, and user requests? Should we use stream processing, batch processing, lambda architecture, or data lakes?</li>
+<li><strong>How to test and debug production ML systems?</strong> How can we <em>evaluate</em> the quality of a model’s predictions in production? How can we <em>test</em> the entire ML-enabled system, not just the model? What lessons can we learn from <em>software testing</em>, <em>automated test case generation</em>, <em>simulation</em>, and <em>continuous integration</em> for testing for production machine learning?</li>
+<li><strong>Which qualities matter beyond a model’s prediction accuracy?</strong> How can we identify and measure important quality requirements, including <em>learning and inference latency, operating cost, scalability, explainablity, fairness, privacy, robustness</em>, and <em>safety</em>? Does the application need to be able to <em>operate offline</em> and how often do we need to update the models? How do we identify what’s important in a ML-enabled product in a production setting for a business? How do we resolve <em>conflicts</em> and <em>tradeoffs</em>?</li>
+<li><strong>How to work effectively in interdisciplinary teams?</strong> How can we bring data scientists, software engineers, UI designers, managers, domain experts, big data specialists, operators, legal council, and other roles together and develop a <em>shared understanding</em> and <em>team culture</em>?</li>
+</ul>
+<p><strong>Examples and case studies</strong> of ML-driven products we discuss include automated audio transcription; distributed detection of missing children on webcams and instant translation in augmented reality; cancer detection, fall detection, COVID diagnosis, and other smart medical and health services; automated slide layout in Powerpoint; semi-automated college admissions; inventory management; smart playlists and movie recommendations; ad fraud detection; delivery robots and smart driving features; and many others.</p>
+<p>An extended group project focuses on building, deploying, evaluating, and maintaining a robust and scalable <em>movie recommendation service</em> under somewhat realistic “production” conditions with 1 million users.</p>
+<h3 class="is-size-4">Learning Outcomes</h3><p>After taking this course, among others, students should be able to</p>
+<ul>
+<li>responsibly turn prototypes into production-ready software products, whether traditional ML, LLMs, or agents,</li>
+<li>consider risks and plan for mistakes in ML components and implement production-quality systems that are robust to those mistakes</li>
+<li>design fault-tolerant and scalable data infrastructure for learning models, serving models, versioning, and experimentation</li>
+<li>ensure quality of the entire machine learning pipeline with test automation and other quality assurance techniques, including automated checks for data quality, data drift, feedback loops, and model quality</li>
+<li>build systems that can be tested and monitored in production and build robust deployment pipelines</li>
+<li>analyze tradeoffs for designing production systems with ML-components, analyzing various qualities beyond accuracy such as operation cost, latency, updateability, and explainability</li>
+<li>consider system-level requirements such as safety, security, privacy, fairness, and usability when building complex ML-enabled products</li>
+<li>communicate effectively in interdisciplinary teams</li>
+</ul>
+<p>In addition, students will gain familiarity with production-quality infrastructure tools, including stream processing with Apache Kafka, test automation with Jenkins, monitoring and experiment tracking with Prometheus, Grafana, and MLFlow, and deployment with Docker and various MLOps tools.</p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  
+
+    <section class="section" id="logistics-and-people">
+      <div class="card">
+        <div class="card-content">
+          <h2 class="title is-2 has-text-danger">Logistics and People</h2>
+          <div class="content">
+          <p>17-445/17-645/17-745/11-695, 12 Units</p>
+<p>The course is the same under all course numbers, except for the PhD-level 17-745 number, which replaces two homework assignments with a mandatory <a href="https://github.com/mlip-cmu/s2026/blob/main/assignments/research_project.md">research project</a>.</p>
+<p>Open to all undergraduate and graduate students meeting the prerequisites. Remote sections are only available to students in the MSE Distance Program and students at the CMU-Africa campus after discussing parameters with the instructors.</p>
+<h3 class="is-size-4">Spring 2026</h3><p>Lectures Monday/Wednesday 2:00-3:20pm, in person, Wean 7500</p>
+<p>Labs Friday 9:30-10:50am in PH 226C (A) and Wean 5302 (B) and 11-12:20pm in BH 225A (C) and Wean 5328 (D) and 2-3:20 in GHC 4102 (E) and Wean 5320 (F). </p>
+<p>Instructors: <a href="https://clairelegoues.com">Claire Le Goues</a> and <a href="https://www.cs.cmu.edu/~ckaestne/">Christian Kaestner</a>.</p>
+<p>TAs: tbd</p>
+<h3 class="is-size-4">Coordination</h3><p>We are happy to answer questions by email and over Slack, meet in person, and will jump on a quick Zoom call if you ask us. We also always arrive 5 to 10 min early to class and stay longer for discussions and questions. If you have questions about assignments and logistics, we prefer that you ask them publicly on Slack.</p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  
+
+    <section class="section" id="schedule">
+      <div class="card">
+        <div class="card-content">
+          <h2 class="title is-2 has-text-danger">Schedule</h2>
+          <div class="content">
+          <p>The course has recently been revised to focus more on risk managements, AI agents, and emerging tooling. Our list of learning goals under <a href="https://github.com/mlip-cmu/s2026/blob/main/learning_goals.md">Learning Goals</a> describes what we aim to cover. Below is a table of a preliminary schedule. We expect the schedule to stay fairly stable, but there may be a couple of smaller changes as the semester progresses.</p>
+<p>| Date  | Topic | <a href="https://mlip-cmu.github.io/book/">Book Chapter</a> | Assignment due |
+| -     | -     | -     | -       | -              |
+The API returned an error: Error: The caller does not have permission</p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  
+
+    <section class="section" id="course-syllabus-and-policies">
+      <div class="card">
+        <div class="card-content">
+          <h2 class="title is-2 has-text-danger">Course Syllabus and Policies</h2>
+          <div class="content">
+          <p>The course uses Canvas and Gradescope for homework submission, grading, discussion, questions, announcements, and supplementary documents; slides will be posted here; Slack is used for communication around homework and projects; Github is used to coordinate group work. All public course material (assignments, slides, syllabus) can be found in the course’s <a href="https://github.com/mlip-cmu/s2026">GitHub repository</a>; announcements and all <em>private</em> material (e.g., grades, passwords) will be shared through Canvas.</p>
+<p><strong>Prerequisites:</strong> The course does not have formal prerequisites, but we describe background knowledge that will help you be successful in the course. In a nutshell, we expect basic exposure to machine learning and basic programming skills, but do not require software engineering experience. </p>
+<p><em>Machine learning (some experience recommended):</em> We suggest that you have basic familiarity with the process of extracting features, building and evaluating models, and a basic understanding of how and when different kinds of learning techniques work (including, but not just limited to prompting LLMs). Familiarity with Python and Jupyter notebooks is helpful. Courses such as 10-301, 10-315, and 05-434 will prepare you well, but project experience or self-learning from books or online courses will likely be sufficient for our purposes. For example, if you have no prior experience, we recommend the book <a href="https://cmu.primo.exlibrisgroup.com/permalink/01CMU_INST/6lpsnm/alma991019665684604436">Hands-On Machine Learning</a> to get practical experience in training and evaluating models prior to taking this course. We have set up a <em><a href="https://forms.gle/JcS61Uao7wHSFQen8">prerequisite knowledge check</a></em> as a Google Form, where we ask 10 questions on machine learning, which help you assess your background – this is set up as an anonymous and ungraded quiz, where you can compare your knowledge against what we believe is useful for you to be successful in this course (click on <em>“view score”</em> after submitting your answer). After submitting your answers, the system will give specific pointers to readings and exercises that may help you fill gaps in background knowledge. </p>
+<p><em>Programming (basic proficiency required):</em> The course has a substantial programming component, especially in the first assignment and the team project, so basic programming skills will be needed. If you take the course without programming experience or solely rely on LLMs/agents for all your coding, you will significantly struggle and it may cause conflicts within the group project. We expect that you meet the following criteria: (1) basic fluency in a programming language like Python, (2) ability to install and learn libraries in that language, (3) ability to ssh into a Unix machine and perform basic command line operations, and (4) ability to install and learn new tools like Docker. We do not prescribe a programming language, but almost all student teams decide to work primarily in Python. We will provide some introductions and examples for essential tools like Git, Docker, Grafana, and Jenkins in labs, but we expect that you will be able to pick up new tools and libraries on your own. For example, we expect that you will be able, on your own, to learn basic use of a library like <a href="https://flask.palletsprojects.com/en/2.1.x/">Flask</a> to write a web service. Throughout the semester, expect to read lots of documentation and tutorials to learn various libraries and tools on your own. If you are worried whether your technical background is sufficient, we recommend that you look at (or even try) <a href="https://github.com/mlip-cmu/s2026/blob/main/assignments/I1_mlproduct.md">homework I1</a> before the semester.</p>
+<p><em>Software engineering (no experience required):</em> Many students will have some software engineering experience beyond basic programming skills from software engineering courses, from internships, or from working in industry, for example experience with requirements engineering, software design, software testing, distributed systems, continuous deployment, or managing teams. No such experience is expected as a prerequisite; we will cover these topics in the course.</p>
+<p>Email the instructors if you would like to further talk to us about prerequisites.</p>
+<p><strong>In-person teaching and lecture recordings:</strong> The course will be taught in person, with limited exceptions for MSE Distance students and students at the CMU-Africa campus. We consider in-class participation and active participation in labs an important part of the learning experience. We will make <em>best effort</em> lecture recordings and will make them available on Canvas. We do <em>not</em> provide a synchronous remote option, and we do not record labs. </p>
+<p>We regularly use Slack for in-class activities. Please make sure that you have access to Slack on a laptop, tablet, or mobile phone during class. We recommend to turn on notifications for Slack at least for direct messages and the announcements channel.</p>
+<p>If you cannot attend class due to a medical issue, family emergency, interview, or other unforeseeable reason, please contact us about possible accommodations. We try to be as flexible as we can, but will handle these cases individually.</p>
+<p><strong>Exams:</strong> The course has two midterms and a final project presentation in the registrar-assigned timeslot of the final exam (to be announced about halfway through the semester <a href="https://www.cmu.edu/hub/docs/final-exams.pdf">here</a>). The midterms are during the normal class period as per schedule. The second midterm is not comprehensive, and only covers material after the first midterm. Examples of past midterms can be found in the <a href="https://github.com/mlip-cmu/s2026/tree/main/exams">course repository</a>.</p>
+<p><strong>Grading:</strong> Evaluation will be based on the following distribution: 30% individual assignments, 30% group project, 25% midterms and participation (see below), 10% labs, 5% reading quizzes. No final exam.</p>
+<p>We strive to provide clear specifications and clear point breakdowns for all homework to set clear expectations and take the guessing out of homework. We often give you choices to self-direct your learning, deciding what to work on and how to address a problem (e.g., we never prescribe a programming language). Clear specifications and point breakdowns allow you to intentionally decide to skip parts of assignments with clear upfront consequences. All parts will be graded pass/fail for the points indicated, no partial credit. For opportunities to redo work, see <em>resubmissions</em> below. For grading participation and quizzes see below. Some assignments have a small amount of bonus points. </p>
+<p>Since we give flexibility to resubmit assignments, we set grade boundaries fairly high. We expect the following grade boundaries:</p>
+
+    <div class="table-container">
+      <table class="table is-striped is-hoverable is-fullwidth">
+        <thead><tr><th>Grade</th><th>Cutoff</th></tr></thead>
+        <tbody><tr><td>A+</td><td>&gt;99%</td></tr><tr><td>A</td><td>&gt;96%</td></tr><tr><td>A-</td><td>&gt;94%</td></tr><tr><td>B+</td><td>&gt;91%</td></tr><tr><td>B</td><td>&gt;86%</td></tr><tr><td>B-</td><td>&gt;82%</td></tr><tr><td>C</td><td>&gt;75%</td></tr><tr><td>D</td><td>&gt;60%</td></tr></tbody>
+      </table>
+    </div>
+  <p><strong>Participation:</strong> Design and engineering content strongly benefits from active engagement with the material and discussions of judgment decisions on specific scenarios and cases. We strongly believe in in-class discussions and in-class exercises and want all students to participate, e.g., answering or asking questions in class, sharing own experiences, presenting results, or participating in in-class votes and surveys. We will give many opportunities for participation in every lecture and lab. </p>
+<p>Students in the class can <em>opt in</em> to having their participation reflected in the grade. If they do, the midterms counts for 15% and participation for 10%. If they do not, midterms count for 25% and participation is not graded.</p>
+<p>For participation grading, we note student engagement with in-class activities to include as a component in grading. We also consider in-authentic participation in in-class activities (e.g., asking others to pretend you participated) as an academic integrity violation (see below).  Again, please talk to us if you need accommodations.</p>
+<p>For students opting into in-class participation, we assign participation grades as follows:</p>
+<ul>
+<li>100%: Participates actively at least once in most lectures (4 lectures waived, no questions asked)</li>
+<li>80%: Participates actively at least once in two thirds of the lectures</li>
+<li>60%: Participates actively at least once in over half of the lectures</li>
+<li>30%: Participates actively at least once in one quarter of the lectures</li>
+<li>0%: Participation in less than one quarter of the lectures.</li>
+</ul>
+<p><strong>Labs:</strong> Labs typically introduce tools and have a task with one or more clear deliverables. Lab assignments are designed to take about 1h of work and can be completed before or during the lab session. Each deliverable is graded pass/fail at any time during that week&#39;s lab session (your own section) by showing your work to the TA. Typically showing your work involves showing source code, demoing executions, and verbally answering a few questions to demonstrate your understanding. The TA may ask a few questions to probe your understanding. While labs are generally in person, we may offer additional opportunities to show your work to a TA <em>online</em> the evening before the lab sessions.</p>
+<p>We intend labs to be low stakes – this is your first practical engagement with the material and mistakes are a normal part of the learning process. Deliverables are graded pass/fail on whether they meet the stated expectations for the deliverables. If your solution does not meet the expectations you can continue working on it during the lab session until it does. For example, the TA may ask you to revisit your solution or look up documentation if not satisfied with your explanation. Outside of explicit accommodations (e.g., medical issues) or using tokens (see below), we do not accept lab solutions after the end of your lab session.</p>
+<p>We encourage collaboration on labs: You can work together with other students both before the lab session and during the lab session. While we do not recommend it, you may look at other students’ solutions and reference solutions and even copy them. However, you will have to present and explain your solution to the TA on your own.</p>
+<p><strong>Textbook, reading assignments, and reading quizzes:</strong> We will be using Goeff Hulten&#39;s <em>&quot;Building Intelligent Systems: A Guide to Machine Learning Engineering&quot;</em> (ISBN: 1484234316) throughout much of the course. The library provides an <a href="https://cmu.primo.exlibrisgroup.com/permalink/01CMU_INST/6lpsnm/alma991019649190004436">electronic copy</a>. In addition, we will provide various additional readings, including blog posts and academic papers, throughout the semester.</p>
+<p>We also wrote our own textbook &quot;<a href="https://mlip-cmu.github.io/book/">Machine Learning in Production</a>&quot; that aligns closely with the lecture content -- available for free <a href="https://mlip-cmu.github.io/book/">online</a> and in print through <a href="https://mitpress.mit.edu/9780262049726/machine-learning-in-production/">MIT Press</a> or anywhere where books are sold. We will not assign chapters from our own textbook, but we always point to the corresponding chapter for each lecture. You might find these useful to review concepts from the lectures.</p>
+<p>We will assign readings for most classes and post a corresponding quiz on Canvas that is due before class. Each quiz contains an open-ended question that relates to the reading. Reading quizzes are intended to be low-stakes assessments and are graded pass/fail for a good-faith effort to engage with the question. </p>
+<p><strong>Teamwork:</strong> Teamwork is an essential part of this course. The course contains a multi-milestone group project to be done in teams of 3-6 students. Teams will be assigned by the instructor. A TA will serve as a mentor for each team. We will help teams throughout the semester and cover some specific content on teamwork as part of the course. Peer rating will be performed for team assignments with regard to <em>team citizenship</em> (i.e., being active and cooperative members), following a procedure adapted from <a href="https://www.cs.tufts.edu/~nr/cs257/archive/teaching/barbara-oakley/JSCL-collaboration.pdf">this article</a>, which we will further explain in an early lecture. Use <a href="https://mlip-cmu.github.io/s2026/assignments/peergrading.html">this form</a> to preview the expected adjustments for peer ratings. The team&#39;s mentor will also debrief with the team after every milestone and discuss possible strategies to improve teamwork. </p>
+<p><strong>Late work policy and resubmissions:</strong> We understand that students will always have competing deadlines, unusual events, interviews for job searches, and other activities that compete with coursework. We therefore build flexibility and a safety net directly into the rubric. If you need additional accommodations, please contact us.</p>
+<p>In addition, we expect that the past/fail grading scheme without partial credit, may lead to harsh point deductions for missing small parts of the requirements, so we provide a mechanism to resubmit work with a short reflection to regain lost points.</p>
+<p>Every student receives <em>8 individual tokens</em> that they can spend throughout the semester in the following ways:</p>
+<ul>
+<li>For each token, a student can submit a homework assignment 1 day late (with 2 tokens a student can submit two homeworks one day late each or a single homework up to two days late). If a student runs out of tokens, late individual assignments receive a penalty of 15% per started day. </li>
+<li>For <em>three</em> tokens, a student can improve or redo an individual homework assignment and resubmit together with a short reflection. The earlier submission is discarded and the regraded assignment counts toward the final grade. Resubmissions can be made at any time in the semester up to the final project presentation (see schedule). – Note that this technically allows a student to blow the original deadline (no submission necessary, receiving 0 points initially) and then resubmit the homework arbitrarily late for three tokens.</li>
+<li>For one token, a student can submit a reading quiz late (any time before the final presentation) or resubmit a graded reading quiz.</li>
+<li>For one token, a student can complete a lab late or redo a lab (any time before the final presentation) by showing the work to a TA during office hours.</li>
+<li>Penalties for late/missing team formation survey and late/missing teamwork peer assessment surveys can be waived for one token each.</li>
+<li>Remaining individual tokens at the end of the semester are counted as one participation day each.</li>
+</ul>
+<p>Every team independently receives <em>8 team tokens</em> that they can spend for extensions of any milestone deadline (1 token per day per milestone, except final presentation deadline) or to resubmit any milestone with a reflection (3 tokens each, resubmitted any time before the final presentation). If a team runs out of tokens, late submissions in group assignments receive a penalty of 15% per started day.</p>
+<p>Individual tokens and team tokens are entirely separate; it is not possible to use individual tokens for teamwork or vice versa. The team should make collective decisions about how to use team tokens.</p>
+<p>In general, late submissions and resubmissions can be done at any point in the semester before the final presentations. Late submissions that are 1-3 days late can be made directly to Gradescope; for everything else follow the instructions on Canvas.</p>
+<p>Exceptions to this policy will be made at the discretion of the instructor in important circumstances, almost always involving a family or medical emergency and an email from your advisor — you can ask your academic advisor or the Dean of Student Affairs requesting the exception on your behalf. Where issues affect teamwork, please communicate proactively with your team.</p>
+<p><strong>Communication:</strong> We make important announcements on Slack; we recommend to enable Slack notifications. We answer email and monitor Slack, which may all be used for clarifying homework assignments and other interactions. We strongly recommend to ask questions publicly on Slack if others might have similar questions. Email or slack us if you would like to make an appointment.</p>
+<p><strong>Auditing:</strong> Due to the high demand for this course, we do <em>not</em> allow official forms of auditing. If you like to self-study, all course materials are online. We welcome interested students and visitors to sit in for lectures as long as the room capacity allows it. </p>
+<p><strong>Time management:</strong> This is a 12-unit course, and it is our intention to manage it so that you spend close to 12 hours a week on the course, on average. In general, 3 hours/week will be spent in class, about 1 hour for the labs, 1 hour on readings and reading quizzes, and 7 hours on assignments. Notice that much homework is done in groups, so please account for the overhead and decreased time flexibility that comes with groupwork. Please give the course staff feedback if the time the course is taking for you differs significantly from our intention.</p>
+<p><strong>Writing:</strong> Describing tradeoffs among decisions and communication with stakeholders from other backgrounds are key aspects of this class. Many homework assignments have a component that requires discussing issues in written form or reflecting about experiences. To practice writing skills, the Global Communications Center (GCC) offers one-on-one help for students, along with workshops. The instructors are also happy to provide additional guidance if requested.</p>
+<p><strong>Use of content generation AI tools and external sources:</strong> Given the nature of this course, we are open to using AI tools for completing work. We place no restrictions on the use of content generation tools, such as ChatGPT, Claude, Bard, Co-Pilot, Stable Diffusion, or Cursor. You may also reuse code from external sources, such as StackOverflow or tutorials, without acknowledgment. In any case, you will be solely responsible for the correctness of the solution. Note that content generation tools often create plausible-looking but incorrect answers, which will not receive credit. Using code generation tools without understanding the generated code will likely create teamwork problems and create challenges of meeting the lab requirements. You are also responsible for complying with any applicable licenses. </p>
+<p><strong>Academic honesty and collaboration:</strong> The usual policies apply, especially the <a href="https://www.cmu.edu/policies/student-and-student-life/academic-integrity.html">University Policy on Academic Integrity</a>. Many parts of the work will be done in groups. We expect that group members collaborate with one another, but that groups work independently from other groups, not exchanging results with other groups. Within groups, we expect that you are honest about your contribution to the group&#39;s work. <strong>This implies not taking credit for others&#39; work and not covering for team members that have not contributed to the team.</strong> <strong>This also applies to in-class discussions, where indicating working with others who did not participate in the discussion is considered an academic honesty violation.</strong> Otherwise, our expectations regarding academic honestly and collaboration for group and pair work are the same as for individual work, substituting elevated to the level of &quot;group.&quot;</p>
+<p>Beyond that, the key guiding principle of academic honesty in this course is: <em>&quot;You may not copy any part of a solution to a problem that was written by another student (in this or prior iterations of the class), or was developed together with another student, or was delegated to another person. You may not look at another student&#39;s solution, even if you have completed your own, nor may you knowingly give your solution to another student or leave your solution where another student can see it.</em>&quot; Note that this implies that you cannot publicly post your solutions on GitHub (e.g., as part of a portfolio during job applications). While the use of AI content generation tools is okay (see above) using the work from other students is not. Discussing challenges and solution strategies with others at a high level is okay, sharing code or text is not.</p>
+<p>You may collaborate with other students on labs, but not on reading quizzes, homeworks, and exams.</p>
+<p>We also expect and respect honesty when communicating with the course staff.</p>
+<p>Any violation of this policy is cheating. The minimum penalty for cheating will be a zero grade for the whole assignment. For cheating on participation, the minimum penalty is -100% on the participation grade. Cheating incidents will also be reported through University channels, with possible additional disciplinary action (see the University Policy on Academic Integrity). There is no statute of limitations for violations of the collaboration policy; penalties may be assessed (and referred to the university disciplinary board) after you have completed the course, and some requirements of the collaboration policy (such as restrictions on you posting your solutions) extend beyond your completion of the course.</p>
+<p>If you have any question about how this policy applies in a particular situation, ask the instructors for clarification.</p>
+<p><strong>Research in this Course:</strong> We are conducting academic research in this course. This research will involve analyzing student work of assignment. You will not be asked to do anything above and beyond the normal learning activities and assignments that are part of this course. You are free not to participate in this research, and your participation will have no influence on your grade for this course or your academic career at CMU. If you do not wish to participate, please send an email to Nadia Nahar (<a href="mailto:nadian@andrew.cmu.edu">nadian@andrew.cmu.edu</a>). Participants will not receive any compensation or extra credit. The data collected as part of this research will not include student grades. All analyses of data from participants’ coursework will be conducted after the course is over and final grades are submitted -- instructors will not know who chooses not to participate before final grades are submitted. All data will be analyzed in de-identified form and presented in the aggregate, without any personal identifiers. If you have questions pertaining to your rights as a research participant, or to report concerns to this study, please contact Nadia Nahar (<a href="mailto:nadian@andrew.cmu.edu">nadian@andrew.cmu.edu</a>) or the Office of Research Integrity and Compliance at Carnegie Mellon University (<a href="mailto:irb-review@andrew.cmu.edu">irb-review@andrew.cmu.edu</a>; phone: 412-268-4721).</p>
+<p><strong>Accommodations for students with disabilities:</strong> If you have a disability with an accommodations letter from the Disability Resources office, we encourage you to discuss your accommodations and needs with us as early in the semester as possible. Please come and talk to us and do not rely on automated emails from the Disability Resources office. We will work with you to ensure that accommodations are provided as appropriate. If you suspect that you may have a disability and would benefit from accommodations but are not yet registered with the Office of Disability Resources, we encourage you to contact them at <a href="mailto:access@andrew.cmu.edu">access@andrew.cmu.edu</a>.</p>
+<p><strong>A note on self care.</strong> Please take care of yourself. Do your best to maintain a healthy lifestyle this semester by eating well, exercising, avoiding drugs and alcohol, getting enough sleep and taking some time to relax. This will help you achieve your goals and cope with stress. All of us benefit from support during times of struggle. You are not alone. There are many helpful resources available on campus and an important part of the college experience is learning how to ask for help. Asking for support sooner rather than later is often helpful.
+If you or anyone you know experiences any academic stress, difficult life events, or feelings like anxiety or depression, we strongly encourage you to seek support. Counseling and Psychological Services (CaPS) is here to help: call 412-268-2922 and visit their website at <a href="http://www.cmu.edu/counseling/">http://www.cmu.edu/counseling/</a>. Consider reaching out to a friend, faculty or family member you trust for help getting connected to the support that can help.
+If you are worried about affording food or feeling insecure about food, there are resources on campus that can help, such as the <a href="https://www.cmu.edu/student-affairs/resources/cmu-pantry/">CMU Pantry</a>.</p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  
+  </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Get all "navbar-burger" elements
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      // Add a click event on each of them
+      $navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+          // Get the target from the "data-target" attribute
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
