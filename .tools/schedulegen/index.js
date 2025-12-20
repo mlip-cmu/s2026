@@ -30,6 +30,10 @@ const fs = require('fs');
         if (id === undefined || id == "")
             return undefined
 
+        if (!fs.existsSync(labDir)) {
+            return undefined;
+        }
+
         const files = fs.readdirSync(labDir);
         if (id.startsWith("lab")) {
             id = id.substring(3);
