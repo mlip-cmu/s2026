@@ -21,7 +21,7 @@ const fs = require('fs');
     const labDir = process.env.LAB_DIR || "labs"
     const semesterRepo = process.env.SEMESTER || "s2026"
 
-    const prefix = "| Date  | Topic | [Book Chapter](https://mlip-cmu.github.io/book/) | Assignment due |\n| -     | -     | -     | -       | -              |"
+    const prefix = "| Date  | Topic | [Book Chapter](https://mlip-cmu.github.io/book/) | Assignment due |\n| -     | -     | -     | -     |"
     console.log(prefix)
 
 
