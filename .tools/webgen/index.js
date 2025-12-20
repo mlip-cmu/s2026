@@ -153,6 +153,7 @@ const html = `<!DOCTYPE html>
       nav .navbar-brand .navbar-item {
         font-size: 4rem;
       }
+      .navbar-brand { padding-left: 4.5rem }
     }
     html { scroll-behavior: smooth; }
     main { margin-top: 2rem; }
@@ -176,7 +177,7 @@ const html = `<!DOCTYPE html>
           <a class="navbar-item" href="#schedule">Schedule</a>
           <a class="navbar-item" href="#course-syllabus-and-policies">Syllabus</a>
           <a class="navbar-item" href="">Canvas</a>
-          <a class="navbar-item" href="https://github.com/mlip-cmu/f2025" target="_blank" rel="noopener">
+          <a class="navbar-item" href="https://github.com/mlip-cmu/s2026" target="_blank" rel="noopener">
             <span class="icon">
               <i class="fab fa-github"></i>
             </span>
