@@ -82,7 +82,7 @@ const fs = require('fs');
 
                     const chapterLinks = chapters?.split(',').map(chapter => {
                         return `[${chapter.trim()}](https://mlip-cmu.github.io/book/${chapter.trim().padStart(2, '0')}/)`;
-                    }).join(',');
+                    }).join(', ');
 
                     if (assignmentLink != undefined && assignmentLink != "")
                         assignment = `[${assignment}](${assignmentLink})`
