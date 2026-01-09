@@ -29,7 +29,7 @@ Zulip organizes conversations into streams and topics – it might be easy to mi
 
 Record a short video demonstrating how this feature works from the user's perspective.
 
-**Feature 2: Topic Title Improver.** Zulip topics can drift as conversations evolve, leaving titles stale, vague, or misleading. Implement a feature that uses an LLM to detect the topic to drift (e.g., sustained off-title discussion, new sub-thread emerging) and to then suggest a better title. The feature should detect drift soon after it occurs, ideally immediately when posting a message, because the user still has the context then. When implementing this feature, you should be conscious of the associated cost and latency, and choose appropriate models and interaction models to trigger this feature. Design this feature such that it could plausibly be used at scale without excessive costs.
+**Feature 2: Topic Title Improver.** Zulip topics can drift as conversations evolve, leaving titles stale, vague, or misleading. Implement a feature that uses an LLM to detect the topic to drift (e.g., sustained off-title discussion, new sub-thread emerging) and to then suggest a better title. The feature should detect drift soon after it occurs, ideally immediately when posting a message, because the user still has the context then. When implementing this feature, you should be conciencious of the associated cost and latency, and choose appropriate models and interaction models to trigger this feature. Design this feature such that it could plausibly be used at scale without excessive costs.
 
 Record a short video demonstrating how this feature works from the user's perspective.
 
@@ -71,12 +71,12 @@ The grading specifications should be clear enough that you should be able to eva
 The assignment is worth 100 points. We will assign credit as follows:
 
 * [ ] 10p: The report is clearly structured, such that it is clear which text belongs to which question. The document includes a link to a specific *commit* in your GitHub repository *created with GitHub classroom*. 
-* [ ] 10p: We can install and run your implementation based on the descriptions in the `README.md` file (including instructions for dependencies and API creditials if needed).
+* [ ] 20p: We can install and run your implementation based on the descriptions in the `README.md` file (including instructions for dependencies and API creditials if needed).
 * [ ] 10p: No private credentials are committed to the GitHub repository, including its history.
 * [ ] 20p: The report describes how message recap is implemented and we can find the corresponding implementation. An LLM was used in the implementation. The application is functional in that it generates a summary every time a user requests recap. A video is recorded showing how a user will use the feature in the user interface.
 * [ ] 20p: The report describes how topic title improver is implemented and we can find the corresponding implementation. An LLM was used in the implementation. The application is functional in that it suggests improved topic titles based on recent messages when topic drift is detected. A video is recorded showing how a user will use the feature in the user interface.
 * [ ] 10p: The report contains a section on AI use, explaining whether, which, and how AI coding tools were used. One of the following is true: (a) no AI coding tool was used when creating the solution, (b) a VSCode-based AI-coding tool was used, and the Usage Monitoring extension was installed, (c) an AI coding tool was used outside of VScode and no VSCode-based AI-coding tool was used.
-* [ ] 20p: You can convince the course staff during office hours within 2 weeks of submitting your solution that you understand your solution and have engaged in some depth with the reflection questions.
+* [ ] 10p: You can convince the course staff during office hours within 2 weeks of submitting your solution that you understand your solution and have engaged in some depth with the reflection questions.
 
 
 
