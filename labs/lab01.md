@@ -9,7 +9,7 @@ To receive credit for this lab, show your work to the TA during recitation.
 - [ ] Commit your code without committing your credentials. Explain to the TA why hard-coding credentials is a bad idea, and explain any remedial steps you might take should credentials accidentally be leaked. 
 
 ## Getting started
-Clone the starter code from this Git repository
+Clone the starter code from this [Git repository](https://github.com/KaushikKoirala/mlip-api-lab/tree/main).
 
 The code implements a Flask web application that exposes an API endpoint for generating a structured travel itinerary for a given destination. The API accepts a destination string and returns a JSON response containing high-level travel information. 
 
