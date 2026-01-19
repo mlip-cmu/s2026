@@ -80,7 +80,7 @@ The endpoint expects a required query parameter:
 
 You can use tools like [curl](https://curl.se/) or [Postman](https://www.postman.com/) to ensure your API endpoint is functioning appropriately. 
 
-The file [mlip-api-lab-collection.json](./mlip-api-lab-collection.json) has a sample request to test calls to your API with Postman. Consider using [Postman test scripts](https://learning.postman.com/docs/tests-and-scripts/write-scripts/test-scripts/) to test the response of your API endpoints (status codes, response structure, etc.,).
+The file [mlip-api-lab-collection.json](https://github.com/KaushikKoirala/mlip-api-lab/blob/main/mlip-api-lab-collection.json) has a sample request to test calls to your API with Postman. Consider using [Postman test scripts](https://learning.postman.com/docs/tests-and-scripts/write-scripts/test-scripts/) to test the response of your API endpoints (status codes, response structure, etc.,).
 
 
 ## Additional resources 
