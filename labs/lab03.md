@@ -12,10 +12,10 @@
 - [ ] Raise a pull request with your new changes, show the the url of the pull request to a TA. Explain the difference between a cloned and forked repository, and explain why we use pull requests.
 - [ ] Demonstrate a safe rollback using `git revert` of a commit you intentionally add during the lab, and explain when `revert` is preferred over `reset`.
 
-In addition to using the built-in features in VS Code, you could also use a git extension for your IDE to complete this lab. If you are using Visual Studio Code, you can use the [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) extension.
+In addition to using the built-in features in VS Code, you could also use a git extension for your IDE to complete this lab, such as the [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) extension.
 
 ## Setup
-1. **Clone** this minGPT repository to your local machine - [avyasharma/minGPT_copy](https://github.com/avyasharma/minGPT_copy) - by running the following command in your terminal:
+1. **Clone** this minGPT repository to your local machine - [mlip/minGPT_copy](https://github.com/mlip-cmu/minGPT_copy) - by running the following command in your terminal:
 
 ```
 git clone https://github.com/avyasharma/minGPT_copy.git  # Feel free to use the SSH URL instead if you prefer
