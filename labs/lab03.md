@@ -15,10 +15,10 @@
 In addition to using the built-in features in VS Code, you could also use a git extension for your IDE to complete this lab, such as the [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) extension.
 
 ## Setup
-1. **Clone** this minGPT repository to your local machine - [mlip/minGPT_copy](https://github.com/mlip-cmu/minGPT_copy) - by running the following command in your terminal:
+1. **Clone** this minGPT repository to your local machine - [mlip-cmu/minGPT_copy](https://github.com/mlip-cmu/minGPT_copy) - by running the following command in your terminal:
 
 ```
-git clone https://github.com/avyasharma/minGPT_copy.git  # Feel free to use the SSH URL instead if you prefer
+git clone https://github.com/mlip-cmu/minGPT_copy  # Feel free to use the SSH URL instead if you prefer
 cd minGPT_copy
 ```
 
@@ -45,12 +45,12 @@ cd minGPT_copy
 1. Create a new branch (e.g., `pull-request`) from `main`. Make a small, reviewable change (e.g., a comment or README line) and commit.  
 2. **Attempt to push** this branch to the current `origin`. **Let it fail** if you don’t have write access. 
    - Try running the following command - `git remote -v` - to debug the issue (We expect you to understand the usage and output of this command)
-3. On GitHub, **fork** [avyasharma/minGPT_copy](https://github.com/avyasharma/minGPT_copy) to your own account. (You had only cloned it earlier)
+3. On GitHub, **fork** [mlip-cmu/minGPT_copy](https://github.com/mlip-cmu/minGPT_copy) to your own account. (You had only cloned it earlier)
 4. Update your local repo’s remotes so that:
    - `origin` points to **your fork**,
    - `upstream` points to the **original** repository.
    > You’ll need to figure out how to add/update remotes. Show the commands you chose and the result to the TA.
-5. Push your branch to your fork and open a **pull request** from your branch into `upstream/main` (the original repo, main branch from [avyasharma/minGPT_copy](https://github.com/avyasharma/minGPT_copy)).  
+5. Push your branch to your fork and open a **pull request** from your branch into `upstream/main` (the original repo, main branch from [mlip-cmu/minGPT_copy](https://github.com/mlip-cmu/minGPT_copy)).  
    - Your pull request should include both **a clear title** and a **1-2 sentence description of what changed**.
 6. Save the PR URL to show the TA.
 
