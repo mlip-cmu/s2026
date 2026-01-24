@@ -59,7 +59,7 @@ Labs Friday 9:30-10:50am in PH 226C (A) and Wean 5302 (B) and 11-12:20pm in BH 2
 
 Instructors: [Claire Le Goues](https://clairelegoues.com) and [Christian Kaestner](https://www.cs.cmu.edu/~ckaestne/).
 
-TAs: Abhishek Sankar, Ashritha Gonuguntla, Avya Sharma, Bhuvana Murugadoss, Kaushik Koirala, Luis Filipe Fernandes Gomes, Nikita Chaudhari
+TAs: Abhishek Sankar, Ashritha Gonuguntla, Avya Sharma, Bhuvana Murugadoss, Kaushik Koirala, Luis Filipe Fernandes Gomes, Nikita Chaudhari, Hao He
 
 
 ## Schedule
