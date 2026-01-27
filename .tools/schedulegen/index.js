@@ -49,7 +49,7 @@ const fs = require('fs');
         if (err) return console.log('The API returned an error: ' + err);
         const rows = res.data.values;
         if (rows.length) {
-            const columnIds = { date: null, topic: null, assignmentDue: null, slidesLink: null, bookChapters: null, reading: null, assignmentLink: null, id: null };
+            const columnIds = { date: null, topic: null, assignmentDue: null, slidesLink: null, bookChapters: null, reading: null, assignmentLink: null, id: null, video: null };
             rows[0].forEach((header, index) => {
                 if (header === "Date") columnIds.date = index;
                 else if (header === "Topic") columnIds.topic = index;
@@ -59,6 +59,7 @@ const fs = require('fs');
                 else if (header === "Assignment link") columnIds.assignmentLink = index;
                 else if (header === "Id") columnIds.id = index;
                 else if (header === "Slides") columnIds.slidesLink = index;
+                else if (header === "Video") columnIds.video = index;
             });
 
             let index = 0;
@@ -72,6 +73,9 @@ const fs = require('fs');
                     const readings = row[columnIds.reading] || "";
                     const assignmentLink = row[columnIds.assignmentLink] || "";
                     const slidesLink = row[columnIds.slidesLink] || "";
+                    const youtubeLink = row[columnIds.video] || ""; // format: https://www.youtube.com/watch?v=sJb780Na9Ks
+                    const youtubeVideoId = youtubeLink.split("v=")[1]?.split("&")[0] || "";
+                    let youtube = ""
                     let badges = ""
                     if (id.includes("lab"))
                         badges += "![Lab](https://img.shields.io/badge/-lab-yellow.svg) "
@@ -105,8 +109,11 @@ const fs = require('fs');
                             index++;
                         }
                     }
+                    if (youtubeVideoId && youtubeVideoId != "") {
+                        youtube = ` <br /><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/${youtubeVideoId}" title="YouTube: Lecture Recording" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+                    }
 
-                    console.log(`| ${date} | ${badges}${topic} | ${chapterLinks} | ${assignment} |`)
+                    console.log(`| ${date} | ${badges}${topic}${youtube} | ${chapterLinks} | ${assignment} |`)
 
                 }
             });
