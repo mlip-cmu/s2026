@@ -111,10 +111,10 @@ const fs = require('fs');
                         }
                     }
                     if (youtubeVideoId && youtubeVideoId != "") {
-                        youtube = ` <br /><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/${youtubeVideoId}" title="YouTube: Lecture Recording" frameborder="0" allow="encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+                        youtube = ` <br /><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/${youtubeVideoId}" title="YouTube: Lecture Recording" frameborder="0" allow="encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> `
                     }
                     if (readings)
-                        readingsOut = `\n<br />\nReadings: ${readings}\n`
+                        readingsOut = ` <br />Readings: ${readings} `
 
                     console.log(`| ${date} | ${badges}${topic}${youtube}${readingsOut} | ${chapterLinks} | ${assignment} |`)
 
