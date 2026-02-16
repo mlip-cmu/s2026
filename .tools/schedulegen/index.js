@@ -77,6 +77,7 @@ const fs = require('fs');
                     const youtubeVideoId = youtubeLink.split("v=")[1]?.split("&")[0] || "";
                     let youtube = ""
                     let badges = ""
+                    let readingsOut = ""
                     if (id.includes("lab"))
                         badges += "![Lab](https://img.shields.io/badge/-lab-yellow.svg) "
                     if (id.includes("midterm"))
@@ -112,8 +113,10 @@ const fs = require('fs');
                     if (youtubeVideoId && youtubeVideoId != "") {
                         youtube = ` <br /><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/${youtubeVideoId}" title="YouTube: Lecture Recording" frameborder="0" allow="encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
                     }
+                    if (readings)
+                        readingsOut = `\n<br />\nReadings: ${readings}\n`
 
-                    console.log(`| ${date} | ${badges}${topic}${youtube} | ${chapterLinks} | ${assignment} |`)
+                    console.log(`| ${date} | ${badges}${topic}${youtube}${readingsOut} | ${chapterLinks} | ${assignment} |`)
 
                 }
             });
