@@ -21,8 +21,12 @@ const fs = require('fs');
     const labDir = process.env.LAB_DIR || "labs"
     const semesterRepo = process.env.SEMESTER || "s2026"
 
-    const prefix = "| Date  | Topic | [Book Chapter](https://mlip-cmu.github.io/book/) | Assignment due |\n| -     | -     | -     | -     |"
-    console.log(prefix)
+    const TABULAR = process.env.TABULAR || false
+
+    if (TABULAR) {
+        const prefix = "| Date  | Topic | [Book Chapter](https://mlip-cmu.github.io/book/) | Assignment due |\n| -     | -     | -     | -     |"
+        console.log(prefix)
+    }
 
 
  
@@ -68,7 +72,9 @@ const fs = require('fs');
                     const date = row[columnIds.date] || "";
                     const id = row[columnIds.id] || "";
                     let topic = row[columnIds.topic] || "";
+                    const topicRaw = topic;
                     let assignment = row[columnIds.assignmentDue] || "";
+                    const assignmentText = assignment;
                     const chapters = row[columnIds.bookChapters] || "";
                     const readings = row[columnIds.reading] || "";
                     const assignmentLink = row[columnIds.assignmentLink] || "";
@@ -116,7 +122,48 @@ const fs = require('fs');
                     if (readings)
                         readingsOut = ` <br />Readings: ${readings} `
 
-                    console.log(`| ${date} | ${badges}${topic}${youtube}${readingsOut} | ${chapterLinks} | ${assignment} |`)
+                    if (TABULAR)
+                        console.log(`| ${date} | ${badges}${topic}${youtube}${readingsOut} | ${chapterLinks} | ${assignment} |`)
+                    else {
+                        const isLab = id.includes("lab")
+                        const isMidterm = id.includes("midterm")
+                        const isBreak = id.includes("break")
+                        const borderColor = isLab ? "#ffe08a" : isMidterm ? "#3e8ed0" : isBreak ? "#f14668" : "#e0e0e0"
+
+                        let badgesHtml = ""
+                        if (isLab) badgesHtml += `<span class="tag is-warning">Lab</span>`
+                        if (isMidterm) badgesHtml += `<span class="tag is-info">Midterm</span>`
+                        if (isBreak) badgesHtml += `<span class="tag is-danger">Break</span>`
+
+                        let topicHtml = topicRaw
+                        if (isLab) {
+                            const labFile = findLabLink(id)
+                            if (labFile) topicHtml = `<a href="https://github.com/mlip-cmu/${semesterRepo}/blob/main/labs/${labFile}">${topicRaw}</a>`
+                        } else if (slidesLink) {
+                            topicHtml = `<a href="${slidesLink}">${topicRaw}</a>`
+                        }
+
+                        const chapterLinksHtml = chapters ? "Book chapters: " + chapters.split(',').map(c => c.trim()).filter(c => c).map(c =>
+                            `<a href="https://mlip-cmu.github.io/book/${c.padStart(2, '0')}/">${c}</a>`
+                        ).join(', ') : ''
+
+                        const assignmentHtml = assignmentText ? "Assignment due: "+
+                            (assignmentLink ? `<a href="${assignmentLink}" class="tag is-warning is-light">${assignmentText}</a>` :
+                                             `<span class="tag is-warning is-light">${assignmentText}</span>`) : ''
+
+                        const chaptersDiv = chapterLinksHtml ? `<div class="is-size-6 has-text-grey-dark mt-1">${chapterLinksHtml}</div>` : ''
+                        const assignmentDiv = assignmentHtml ? `<div class="is-size-6 has-text-grey-dark mt-1">${assignmentHtml}</div>` : ''
+                        const readingsDiv = readings ? `<div class="is-size-6 has-text-grey mt-1">Readings: ${readings.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')}</div>` : ''
+
+                        const youtubeHtml = youtubeVideoId ? `<iframe style="width:100%;aspect-ratio:16/9;border:none;margin-top:0.5rem;display:block" src="https://www.youtube-nocookie.com/embed/${youtubeVideoId}" title="YouTube: Lecture Recording" frameborder="0" allow="encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>` : ''
+
+                        console.log(`<div style="border-left:4px solid ${borderColor};padding-left:0.75rem;margin-bottom:1.25rem">
+<div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap">
+  <span class="tag is-light is-medium">${date}</span>${badgesHtml ? ` ${badgesHtml}` : ''}
+  <span>${topicHtml}</span>
+</div>${chaptersDiv}${assignmentDiv}${readingsDiv}${youtubeHtml}
+</div>`)
+                    }
 
                 }
             });
