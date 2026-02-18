@@ -157,11 +157,11 @@ const fs = require('fs');
 
                         const youtubeHtml = youtubeVideoId ? `<iframe style="width:100%;aspect-ratio:16/9;border:none;margin-top:0.5rem;display:block" src="https://www.youtube-nocookie.com/embed/${youtubeVideoId}" title="YouTube: Lecture Recording" frameborder="0" allow="encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>` : ''
 
-                        console.log(`<div style="border-left:4px solid ${borderColor};padding-left:0.75rem;margin-bottom:1.25rem">
-<div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap">
-  <span class="tag is-light is-medium">${date}</span>${badgesHtml ? ` ${badgesHtml}` : ''}
-  <span>${topicHtml}</span>
-</div>${chaptersDiv}${assignmentDiv}${readingsDiv}${youtubeHtml}
+                        console.log(`
+<div class="block"  style="border-left:4px solid ${borderColor};padding-left:0.75rem;margin-bottom:1.25rem">
+    <h3 class="title is-3">${date}</h3>
+    <p>${badgesHtml ? ` ${badgesHtml}` : ''} ${topicHtml}</p>
+    <p>${chaptersDiv}${assignmentDiv}${readingsDiv}${youtubeHtml}</p>
 </div>`)
                     }
 
