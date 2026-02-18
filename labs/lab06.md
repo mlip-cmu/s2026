@@ -10,7 +10,7 @@ By the end, you should understand how CI helps maintain code quality, automate M
 
 - [ ] **Deliverable 2:** Configure the workflow to run on your self-hosted runner. Trigger a workflow run and show in the logs that the runner label is `self-hosted`. Explain to the TA the difference between a GitHub-hosted runner and a self-hosted runner, and why you might prefer one over the other.
 
-- [ ] **Deliverable 3:** Run the ML demo pipeline as part of CI and show the TA the logs where the model score is printed. Explain to the TA why integrating the ML demo pipeline into CI adds value compared to only running it manually on your local machine.
+- [ ] **Deliverable 3:** Run the ML demo pipeline as part of CI and show the TA the logs where the model score is printed. Explain to the TA why CI integration adds value through automated, reproducible checks on every change, while full-scale model training is usually kept outside CI due to runtime and cost constraints.
 
 
 ## Step 0: Repository Setup
