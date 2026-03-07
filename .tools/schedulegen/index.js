@@ -135,7 +135,7 @@ const fs = require('fs');
                     const dueContent = assignmentLink
                         ? `<a href="${assignmentLink}">${assignmentText}</a>`
                         : assignmentText
-                    dueLine = `\n  <p class="title is-5 mb-2"><span class="tag is-danger is-medium mr-2">Due</span> ${dueContent}</p>`
+                    dueLine = `\n  <p class="title is-4 mb-2"><span class="tag is-danger is-medium mr-2">Due</span> ${dueContent}</p>`
                 }
 
                 // Book chapters
@@ -144,10 +144,10 @@ const fs = require('fs');
                     `<a href="https://mlip-cmu.github.io/book/${c.padStart(2, '0')}/">${c}</a>`
                 ).join(', ')
                 const chapterLabel = chapterList.length === 1 ? 'Corresponding book chapter' : 'Corresponding book chapters'
-                const chaptersLine = chapterLinksHtml ? `\n    <p class="is-size-6 has-text-grey mb-1"><strong>${chapterLabel}:</strong> ${chapterLinksHtml}</p>` : ''
+                const chaptersLine = chapterLinksHtml ? `\n    <p class="is-size-5 has-text-grey mb-1"><strong>${chapterLabel}:</strong> ${chapterLinksHtml}</p>` : ''
 
                 // Reading
-                const readingsLine = readings ? `\n    <p class="is-size-6 has-text-grey mb-1"><strong>Required reading:</strong> ${readings.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')}</p>` : ''
+                const readingsLine = readings ? `\n    <p class="is-size-5 has-text-grey mb-1"><strong>Required reading:</strong> ${readings.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')}</p>` : ''
 
                 // Metadata div (book + reading)
                 const metadataDiv = (chaptersLine || readingsLine) ? `\n  <div class="mt-2">${chaptersLine}${readingsLine}\n  </div>` : ''
@@ -158,8 +158,8 @@ const fs = require('fs');
                 console.log(`
 <!-- ${date.replace(/^[A-Za-z]+, /, '')} -->
 <div class="box schedule-entry ${entryType} mb-4 p-4">
-  <p class="is-size-6 has-text-grey-dark mb-1">${date}</p>${dueLine}
-  <p class="title is-5 mb-0">${typeTag} ${topicHtml}</p>${metadataDiv}${youtubeHtml}
+  <p class="is-size-5 has-text-grey-dark mb-1">${date}</p>${dueLine}
+  <p class="title is-4 mb-0">${typeTag} ${topicHtml}</p>${metadataDiv}${youtubeHtml}
 </div>`)
             })
         } else {
