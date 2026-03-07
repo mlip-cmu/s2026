@@ -67,6 +67,8 @@ const fs = require('fs');
             });
 
             let index = 0;
+            let currentWeek = null;
+            let semesterStart = null;
             rows.map((row) => {
                 if (row[0] !== 'Date' && row[0] != '' && row[0] != undefined) {
                     const date = row[columnIds.date] || "";
@@ -126,15 +128,24 @@ const fs = require('fs');
                         console.log(`| ${date} | ${badges}${topic}${youtube}${readingsOut} | ${chapterLinks} | ${assignment} |`)
                     else {
                         const isLab = id.includes("lab")
-                        const isMidterm = id.includes("midterm")
+                        const isExam = id.includes("midterm") || id.includes("final")
                         const isBreak = id.includes("break")
-                        const borderColor = isLab ? "#ffe08a" : isMidterm ? "#3e8ed0" : isBreak ? "#f14668" : "#e0e0e0"
+                        const isLecture = !isLab && !isExam && !isBreak
 
-                        let badgesHtml = ""
-                        if (isLab) badgesHtml += `<span class="tag is-warning">Lab</span>`
-                        if (isMidterm) badgesHtml += `<span class="tag is-info">Midterm</span>`
-                        if (isBreak) badgesHtml += `<span class="tag is-danger">Break</span>`
+                        const entryType = isLab ? "is-lab" : isExam ? "is-midterm" : isBreak ? "is-break" : "is-lecture"
 
+                        // Week separator
+                        const dateObj = new Date(date)
+                        if (!isNaN(dateObj)) {
+                            if (!semesterStart) semesterStart = dateObj
+                            const weekNum = Math.floor((dateObj - semesterStart) / (7 * 24 * 60 * 60 * 1000)) + 1
+                            if (weekNum !== currentWeek) {
+                                currentWeek = weekNum
+                                if (weekNum > 1) console.log(`\n<div class="mt-6"></div>`)
+                            }
+                        }
+
+                        // Topic with link
                         let topicHtml = topicRaw
                         if (isLab) {
                             const labFile = findLabLink(id)
@@ -143,25 +154,44 @@ const fs = require('fs');
                             topicHtml = `<a href="${slidesLink}">${topicRaw}</a>`
                         }
 
-                        const chapterLinksHtml = chapters ? "Book chapters: " + chapters.split(',').map(c => c.trim()).filter(c => c).map(c =>
+                        // Tag for entry type
+                        let typeTag = ""
+                        if (isLab) typeTag = `<span class="tag is-warning is-medium mr-2">Lab</span>`
+                        else if (isExam) typeTag = `<span class="tag is-info is-medium mr-2">${id.charAt(0).toUpperCase() + id.slice(1)}</span>`
+                        else if (isBreak) typeTag = `<span class="tag is-light is-medium mr-2">Break</span>`
+                        else typeTag = `<span class="tag is-success is-medium mr-2">Lecture</span>`
+
+                        // Due date line (appears before the type tag)
+                        let dueLine = ""
+                        if (assignmentText) {
+                            const dueContent = assignmentLink
+                                ? `<a href="${assignmentLink}">${assignmentText}</a>`
+                                : assignmentText
+                            dueLine = `\n  <p class="title is-5 mb-2"><span class="tag is-danger is-medium mr-2">Due</span> ${dueContent}</p>`
+                        }
+
+                        // Book chapters
+                        const chapterLinksHtml = chapters ? chapters.split(',').map(c => c.trim()).filter(c => c).map(c =>
                             `<a href="https://mlip-cmu.github.io/book/${c.padStart(2, '0')}/">${c}</a>`
                         ).join(', ') : ''
+                        const chapterCount = chapters ? chapters.split(',').map(c => c.trim()).filter(c => c).length : 0
+                        const chapterLabel = chapterCount === 1 ? 'Corresponding book chapter' : 'Corresponding book chapters'
+                        const chaptersLine = chapterLinksHtml ? `\n    <p class="is-size-6 has-text-grey mb-1"><strong>${chapterLabel}:</strong> ${chapterLinksHtml}</p>` : ''
 
-                        const assignmentHtml = assignmentText ? "Assignment due: "+
-                            (assignmentLink ? `<a href="${assignmentLink}" class="tag is-warning is-light">${assignmentText}</a>` :
-                                             `<span class="tag is-warning is-light">${assignmentText}</span>`) : ''
+                        // Reading
+                        const readingsLine = readings ? `\n    <p class="is-size-6 has-text-grey mb-1"><strong>Required reading:</strong> ${readings.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')}</p>` : ''
 
-                        const chaptersDiv = chapterLinksHtml ? `<div class="is-size-6 has-text-grey-dark mt-1">${chapterLinksHtml}</div>` : ''
-                        const assignmentDiv = assignmentHtml ? `<div class="is-size-6 has-text-grey-dark mt-1">${assignmentHtml}</div>` : ''
-                        const readingsDiv = readings ? `<div class="is-size-6 has-text-grey mt-1">Readings: ${readings.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')}</div>` : ''
+                        // Metadata div (book + reading)
+                        const metadataDiv = (chaptersLine || readingsLine) ? `\n  <div class="mt-2">${chaptersLine}${readingsLine}\n  </div>` : ''
 
-                        const youtubeHtml = youtubeVideoId ? `<iframe style="width:100%;aspect-ratio:16/9;border:none;margin-top:0.5rem;display:block" src="https://www.youtube-nocookie.com/embed/${youtubeVideoId}" title="YouTube: Lecture Recording" frameborder="0" allow="encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>` : ''
+                        // Video
+                        const youtubeHtml = youtubeVideoId ? `\n  <div class="columns mt-2">\n    <div class="column is-half-desktop">\n      <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/${youtubeVideoId}" title="YouTube: Lecture Recording" allow="encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>\n    </div>\n  </div>` : ''
 
                         console.log(`
-<div class="block"  style="border-left:4px solid ${borderColor};padding-left:0.75rem;margin-bottom:1.25rem">
-    <h3 class="title is-3">${date}</h3>
-    <p>${badgesHtml ? ` ${badgesHtml}` : ''} ${topicHtml}</p>
-    <p>${chaptersDiv}${assignmentDiv}${readingsDiv}${youtubeHtml}</p>
+<!-- ${date.replace(/^[A-Za-z]+, /, '')} -->
+<div class="box schedule-entry ${entryType} mb-4 p-4">
+  <p class="is-size-6 has-text-grey-dark mb-1">${date}</p>${dueLine}
+  <p class="title is-5 mb-0">${typeTag} ${topicHtml}</p>${metadataDiv}${youtubeHtml}
 </div>`)
                     }
 
