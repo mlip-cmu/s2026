@@ -23,6 +23,13 @@
     }
     html { scroll-behavior: smooth; }
     main { margin-top: 2rem; }
+    .schedule-entry { border-left: 4px solid #dbdbdb; }
+    .schedule-entry.is-lecture { border-left-color: #48c78e; }
+    .schedule-entry.is-lab { border-left-color: #ffe08a; }
+    .schedule-entry.is-break { border-left-color: #b5b5b5; }
+    .schedule-entry.is-midterm { border-left-color: #3e8ed0; }
+    .schedule-entry .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; }
+    .schedule-entry .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }  
   </style>
 </head>
 <body>
