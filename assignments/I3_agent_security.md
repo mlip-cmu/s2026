@@ -75,6 +75,8 @@ See Canvas for instructions of how to create a private repository with GitHub cl
 
 **Implemented security and safety guarantees (2 pages/1000 words max):** In a file `guarantees.md` in the root directory of the repository, for each of the four problems listed in this assignment, explain how you changed the implementation and how this *guarantees* that the problem will not occur. Include links to point to the specific code locations where you changed the file.
 
+**Explanation/reflection:** Within 2 weeks of submitting the assignment meet with a member of the course staff during office hours to explain your solution. We may ask questions about your implementation and how you are sure that your changes provide guarantees. In addition, we may engage you on the the following questions: What level of assurance (guarantees, probabilistic prompt injection defenses) do you consider necessary to deploy agents in a commercial setting (e.g., customer service) or for personal use? Have you previously installed a third-party MCP server (e.g., for a coding agent) and what checks did you perform if any? What would it take going forward for you to trust a third-party MCP server?
+
 
 ## Grading
 
@@ -82,10 +84,11 @@ The assignment is worth 100 points. We will assign credit as follows:
 
 * 10p: A file `security_analysis.md` in the root directory of the repository correctly identifies for six security/safety properties whether each relates to confidentiality, integrity, availability (security), or real-world harms (safety).
 * 10p: A file `security_analysis.md` in the root directory of the repository illustrates a violation for each of the four properties (Property 1-4) in this document with a log showing an interaction with the agent.
-* 20p: A file `security_analysis.md` in the root directory of the repository includes one plausible security property and one plausible safety property (in addition to Property 1-4 in this document). Both additional properties are clearly stated as requirements that should be realistically expected to hold in the scenario with the given threat model. For each of the these properties, a violation is illustrated with a log showing an interaction with the agent.
+* 10p: A file `security_analysis.md` in the root directory of the repository includes one plausible security property and one plausible safety property (in addition to Property 1-4 in this document). Both additional properties are clearly stated as requirements that should be realistically expected to hold in the scenario with the given threat model. For each of the these properties, a violation is illustrated with a log showing an interaction with the agent.
 * 10p: A file `hardening.md` in the root directory of the repository describes how the implementation was hardened against prompt injection attacks. The implementation matches the description. The description and implementation cover both direct and indirect prompt injection attacks.
 * 10p: A file `hardening.md` in the root directory of the repository reports the measured overhead of the prompt injection defenses, both in terms of latency and cost, for at least two example interactions with the agent.
 * 10p for each property (40p total): A file `guarantees.md` in the root directory of the repository reports how the implementation was changed (with links to the changed artifacts) to guarantee that properties 1-4 in this document always hold. The change provides a guarantee, not just decreases the likelihood of the problem. The implementation matches the description.
+* 10 points: You can convince the course staff during office hours within 2 weeks of submitting your solution that you understand your solution and can plausibly justify why your solutions provide guarantees, and that you have engaged with the reflection questions.
 
 ## Technical Notes
 
