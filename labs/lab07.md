@@ -2,10 +2,10 @@
 
 In this lab, you'll learn how to connect a tool-calling agent to a Model Context Protocol (MCP) server, extend it with new tools, and analyze how external data sources can lead to indirect prompt-injection attacks. By the end of the lab, you'll have an airline customer-service agent that uses MCP tools and an understanding of the security implications.
 
-Clone the code from [this](https://classroom.github.com/assignment-invitations/a1376b4e8fe06cd2d5bcfd5c2997278e) template repository.
+Clone the code from [this](https://classroom.github.com/a/-aFw_lVt) template repository.
 
 **Note**: We highly recommend you use the Google Cloud Credits provided earlier in the semester. For more instructions on how to redeem your
-credits and utilize the Gemini API, follow the instructions listed [here](https://canvas.cmu.edu/courses/51429/pages/additional-computing-resources).
+credits and utilize the Gemini API, follow the instructions listed [here](https://canvas.cmu.edu/courses/51429/pages/additional-computing-resources). 
 
 ## Deliverables
 
@@ -29,8 +29,8 @@ The agent also has limited knowledge about airports. Add a second MCP tool calle
 
 ## Task 2: Indirect Prompt Injection Attack
 
-Assuming an attacker knows about the `airport_info` tool and is able to modify Wikipedia content in a way that won't be detected for several minutes, how could this be used for malicious purposes?
+Assuming an attacker knows about the `airport_info` tool and is able to modify Wikipedia content in a way that won't be detected for several minutes, how could this be used for malicious purposes? Alternatively, what if the author of the MCP server itself is malicious?
 
-Demonstrate an attempted prompt injection attack by delivering malicious content through the `airport_info` MCP server (please do not actually modify Wikipedia but create testing code for this in your MCP server).
+Demonstrate an attempted prompt injection attack by delivering malicious content through the `airport_info` MCP server. Since we do not want to actually modify Wikipedia, you will need to implement a stub in your MCP server's code that returns the malicious payload. This stub effectively simulates either a compromised data source or a malicious MCP server author.
 
 Since modern LLMs are quite good at defending against simple prompt injection attacks, we introduced a backdoor: If you cannot get it to work without, include the token `##MAGIC##` in your attack and you will find it much easier to get the model to follow your instructions. (If that also fails, we will accept plausible attempts, even if not successful.)
