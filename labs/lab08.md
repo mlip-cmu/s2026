@@ -6,9 +6,9 @@ You will set up a Prometheus monitoring system, connect it to a Kafka broker, an
 To receive credit for this lab, show your work to the TA in your own recitation section.
 
 ## Deliverables
-- [ ] Setup Docker with Prometheus and Grafana.	Modify and Run Kafka Monitoring Script.
+- [ ] Setup Docker with Prometheus and Grafana, updating `docker-compose.yml` so node exporter reports host-level metrics.	Implement the required response status code and latency metrics in `kafka-monitoring.py`.
 - [ ] Verify Prometheus targets and metrics. Run queries in Prometheus.  Explain to the TA how Prometheus reads and stores metric data, how it handles counter resets when a service restarts.
-- [ ] Configure Grafana Dashboard and add visualizations. Explain to TA how you would aggregate or synchronize metrics if multiple instances of the same service were running.
+- [ ] Create a Grafana dashboard with the following 4 panels: (1) total successful requests (status 200), (2) request rate over time (5 min), (3) node CPU usage (system mode), and (4) 95th percentile request latency (p95). Ensure panels are clearly labeled, and be prepared to explain how metrics would be aggregated across multiple service instances.
 
 
 ## Getting started
