@@ -25,7 +25,7 @@ The dataset is small enough to version in Git for convenience, but in a real pro
 
 ## Deliverables
 
-- **Deliverable 1 (Run DVC & Roar)**: Complete the step-by-step instructions in [INSTRUCTIONS.md](INSTRUCTIONS.md). Show the TA:
+- **Deliverable 1 (Run DVC & Roar)**: Complete the step-by-step instructions in [INSTRUCTIONS.md](https://github.com/AshrithaG/mlip-lab-9/blob/main/INSTRUCTIONS.md). Show the TA:
   - Your `dvc dag` output and `roar dag` output
   - The registered artifact lineage on [glaas.ai](https://glaas.ai/)
 
@@ -38,8 +38,8 @@ The dataset is small enough to version in Git for convenience, but in a real pro
 | File | What it contains |
 |------|-----------------|
 | **This README** | Overview, setup, reflection questions, and deliverables |
-| [**INSTRUCTIONS.md**](INSTRUCTIONS.md) | Step-by-step commands for DVC (Part 1) and Roar (Part 2) |
-| [**TROUBLESHOOTING.md**](TROUBLESHOOTING.md) | Common errors and how to fix them |
+| [**INSTRUCTIONS.md**](https://github.com/AshrithaG/mlip-lab-9/blob/main/INSTRUCTIONS.md) | Step-by-step commands for DVC (Part 1) and Roar (Part 2) |
+| [**TROUBLESHOOTING.md**](https://github.com/AshrithaG/mlip-lab-9/blob/main/TROUBLESHOOTING.md) | Common errors and how to fix them |
 
 ---
 
@@ -52,7 +52,7 @@ The dataset is small enough to version in Git for convenience, but in a real pro
 - A terminal environment (see platform notes below)
 
 > **Platform notes**:
-> - **macOS**: Both DVC and Roar work natively. Roar requires a non-Apple Python (Homebrew, pyenv, conda, or python.org installer). Run `which python3` — if it shows `/usr/bin/python3`, see [TROUBLESHOOTING.md](TROUBLESHOOTING.md). If you run into any issues on macOS, we recommend that you work on your team's VM.
+> - **macOS**: Both DVC and Roar work natively. Roar requires a non-Apple Python (Homebrew, pyenv, conda, or python.org installer). Run `which python3` — if it shows `/usr/bin/python3`, see [TROUBLESHOOTING.md](https://github.com/AshrithaG/mlip-lab-9/blob/main/TROUBLESHOOTING.md). If you run into any issues on macOS, we recommend that you work on your team's VM.
 > - **Windows**: DVC works natively. Roar requires **WSL2** (Windows Subsystem for Linux). Install it with `wsl --install` in PowerShell if you don't have it, then do the entire lab inside WSL. If you run into any issues on Windows, we recommend that you work on your team's VM.
 > - **Linux**: Everything works out of the box.
 
@@ -113,7 +113,7 @@ You should see output showing the data split, trained model parameters, and eval
 
 ---
 
-**Next step**: Open [INSTRUCTIONS.md](INSTRUCTIONS.md) to begin Part 1 (DVC) and Part 2 (Roar). Once you have completed both parts, return here for Part 3.
+**Next step**: Open [INSTRUCTIONS.md](https://github.com/AshrithaG/mlip-lab-9/blob/main/INSTRUCTIONS.md) to begin Part 1 (DVC) and Part 2 (Roar). Once you have completed both parts, return here for Part 3.
 
 ---
 
