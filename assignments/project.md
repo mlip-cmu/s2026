@@ -280,7 +280,7 @@ The report should include the following sections:
 The final debriefing with the team mentor should cover the following reflection questions:
 
 * *Reflection on the recommendation service:* Reflect on the recommendation service you built, for example: What parts were the most challenging? Which aspects are still unstable and would require additional investment if you had to deploy the recommendation service at scale in production? How would you address these issues if you had more time and more resources? If you had to start over, what would you do differently?
-* *Reflection on teamwork:* For example, what went well or less well in the team assignments? What were some of the main challenges you faced in teamwork? If you had to do this over, what would you change? What lessons have you identified for future team projects? If you already discussed all these issues in your Milestone 4 debriefing, your team mentor may waive this part.
+* *Reflection on teamwork:* For example, what went well or less well in the team assignments? What were some of the main challenges you faced in teamwork? If you had to do this over, what would you change? What lessons have you identified for future team projects? 
 
 **Grading:** The assignment is worth 83 points:
 
