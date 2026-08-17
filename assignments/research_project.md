@@ -4,7 +4,7 @@
 
 ## Overview
 
-Students enrolled in the PhD-level version of this course 17-745 instead of 17-445/17-645/11-695 will do a research project in the second half of the semester, instead of individual assignments 3 and 4.
+Students enrolled in the PhD-level version of this course 17-745 instead of 17-445/17-645/11-695 will do a research project in the second half of the semester, instead of individual assignments 4 and 5.
 
 The end goal of this project should be a 4 page research paper on some topic of your interest that relates to the course material. 
 

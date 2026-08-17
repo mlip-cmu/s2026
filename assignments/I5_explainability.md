@@ -1,4 +1,4 @@
-# Individual Assignment 4: Explainability
+# Individual Assignment 5: Explainability
 
 (17-445/17-645 Machine Learning in Production)
 
@@ -109,8 +109,8 @@ The assignment is worth 100 points. For full credit, we expect:
 * [ ] 10 points: A file `explanation_needs.md` in the root directory of the linked repository describes the identified explanation needs separately for both stakeholders listed on Canvas. The process for identifying the information needs is described and some evidence is provided that the process was followed.
 * [ ] 10 points: A PDF file `explanation_global.md` or `explanation_global.pdf` is included in the root directory of the linked repository that contains the global explanations (handbook/website/leaflet) for the first stakeholder. A file `explanations.md` in the root directory of the linked repository explains how this meets the previously identified explanation needs. The markdown/PDF file corresponds to the description in the report.
 * [ ] 10 points: A PDF file `explanation_local.md` or `explanation_local.pdf` is included in the root directory of the linked repository that contains the individual/local explanations for the second stakeholder (display/handout) for *two* patients. A file `explanations.md` in the root directory of the linked repository explains how this meets the previously identified explanation needs. The PDF corresponds to the description in the report.
-* [ ] 10 points: Code is provided that can provide local explanations for other patients. Instructions are clear on how to create additional local explanations.
-* [ ] 10 points: The global and local explanations are clearly designed for the intended target stakeholders, rather than developers. A file `explanations.md` in the root directory of the linked repository explains how the provided explanations intend to meet the identified explanation needs of the stakeholders.
+* [ ] 5 points: Code is provided that can provide local explanations for other patients. Instructions are clear on how to create additional local explanations.
+* [ ] 5 points: The global and local explanations are clearly designed for the intended target stakeholders, rather than developers. A file `explanations.md` in the root directory of the linked repository explains how the provided explanations intend to meet the identified explanation needs of the stakeholders.
 * [ ] 40 points (5 points each): In a file `compliance.md` in the root directory of the linked repository, for each of the following policy requirements (a) the answer describes how the requirement was addressed technically, (b) the provided PDF files illustrate the solution, and (c) the answer makes a good faith attempt at providing evidence to demonstrate compliance, or discusses additional steps needed for compliance, or explains why compliance may not be possible or applicable. 
   1. Describes the intended use and the role of the automation
   2. Provides evidence that the automation (model) functions accurately, consistently, and effectively in the intended use case
@@ -120,5 +120,5 @@ The assignment is worth 100 points. For full credit, we expect:
   6. Describes the data used by the automated system. Justifies the use of personal identifiable information.
   7. Describes how to report misuse or harm from the automated system.
   8. Provides all documentation in language appropriate for the intended audience. All documentation for untrained users must use nontechnical language at an eighth grade reading level.
-* [ ] 10 points: You can convince the course staff during office hours within 2 weeks of submitting your solution that you understand your solution and that you have engaged with the reflection questions.
+* [ ] 20 points: You can convince the course staff during office hours within 2 weeks of submitting your solution that you understand your solution and that you have engaged with the reflection questions.
 
