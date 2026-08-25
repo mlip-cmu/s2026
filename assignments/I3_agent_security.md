@@ -1,8 +1,5 @@
-# Individual Assignment 4: Agent Security and Safety
-
-(17-445/17-645 Machine Learning in Production)
-
-**Note: This is last semester's version of the assignment. It may still be updated before it is formally released.**
+# Individual Assignment 3: Agent Security and Safety
+(17-445/17-645/17-745 Machine Learning in Production; 11-695 AI Engineering)
 
 ## Overview
 
@@ -85,13 +82,13 @@ See Canvas for instructions of how to create a private repository with GitHub cl
 
 The assignment is worth 100 points. We will assign credit as follows:
 
-* 5p: A file `security_analysis.md` in the root directory of the repository correctly identifies for six security/safety properties whether each relates to confidentiality, integrity, availability (security), or real-world harms (safety).
+* 10p: A file `security_analysis.md` in the root directory of the repository correctly identifies for six security/safety properties whether each relates to confidentiality, integrity, availability (security), or real-world harms (safety).
 * 10p: A file `security_analysis.md` in the root directory of the repository illustrates a violation for each of the four properties (Property 1-4) in this document with a log showing an interaction with the agent.
 * 10p: A file `security_analysis.md` in the root directory of the repository includes one plausible security property and one plausible safety property (in addition to Property 1-4 in this document). Both additional properties are clearly stated as requirements that should be realistically expected to hold in the scenario with the given threat model. For each of the these properties, a violation is illustrated with a log showing an interaction with the agent.
 * 10p: A file `hardening.md` in the root directory of the repository describes how the implementation was hardened against prompt injection attacks. The implementation matches the description. The description and implementation cover both direct and indirect prompt injection attacks.
-* 5p: A file `hardening.md` in the root directory of the repository reports the measured overhead of the prompt injection defenses, both in terms of latency and cost, for at least two example interactions with the agent.
+* 10p: A file `hardening.md` in the root directory of the repository reports the measured overhead of the prompt injection defenses, both in terms of latency and cost, for at least two example interactions with the agent.
 * 10p for each property (40p total): A file `guarantees.md` in the root directory of the repository reports how the implementation was changed (with links to the changed artifacts) to guarantee that properties 1-4 in this document always hold. The change provides a guarantee, not just decreases the likelihood of the problem. The implementation matches the description.
-* 20 points: You can convince the course staff during office hours within 2 weeks of submitting your solution that you understand your solution and can plausibly justify why your solutions provide guarantees, and that you have engaged with the reflection questions.
+* 10 points: You can convince the course staff during office hours within 2 weeks of submitting your solution that you understand your solution and can plausibly justify why your solutions provide guarantees, and that you have engaged with the reflection questions.
 
 ## Technical Notes
 
