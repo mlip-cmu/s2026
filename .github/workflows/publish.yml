@@ -1,16 +1,27 @@
 name: publish-gh-pages
 
 on:
-  push: 
+  push:
     branches: main
+  workflow_dispatch:
+
+# Allow the workflow to deploy to GitHub Pages via the built-in token.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one Pages deployment at a time; don't cancel an in-progress one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  gh-pages:
+  build:
     runs-on: ubuntu-latest
-    
     steps:
-    - uses: actions/checkout@v4
-      
+    - uses: actions/checkout@v7
+
     - name: Prepare _site
       run: |
         echo generate main html page in _site/
@@ -22,14 +33,13 @@ jobs:
         npm install --no-optional
         cd ../..
 
-
     - name: Generate main page
       env:
           GDOC_CREDENTIALS: ${{ secrets.GDOC_CREDENTIALS }}
           SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
       run: |
         echo $GDOC_CREDENTIALS > credentials.json
-        SPREADSHEET_ID="$SPREADSHEET_ID" SEMESTER=s2026 node .tools/schedulegen/index.js > schedule.md
+        SPREADSHEET_ID="$SPREADSHEET_ID" SEMESTER=f2026 node .tools/schedulegen/index.js > schedule.md
         node .tools/webgen/index.js README.md schedule.md > _site/index.html
         cp *.svg _site/
         cp *.png _site/
@@ -37,27 +47,16 @@ jobs:
         cp assignments/*.html _site/assignments/
         rm credentials.json
 
+    - name: Upload Pages artifact
+      uses: actions/upload-pages-artifact@v5
 
-    - name: Push to gh-pages
-      run: |
-        if git clone --quiet --branch gh-pages --depth 1 https://github.com/${{ github.repository }}.git .gh-pages 2>/dev/null; then
-          echo "gh-pages branch exists, cloned successfully"
-          rm -rf .gh-pages/*
-        else
-          echo "gh-pages branch does not exist, creating new orphan branch"
-          mkdir .gh-pages
-          cd .gh-pages
-          git init
-          git checkout --orphan gh-pages
-          cd ..
-        fi
-        mv _site/* .gh-pages
-        cd .gh-pages
-        rm .gitignore -f
-        git add .
-        touch .nojekyll
-        git add .nojekyll
-        git config --local user.email "ckaestne@nomail.cs.cmu.edu"
-        git config --local user.name "GitHub Action"
-        git commit --allow-empty -m "Update gh-pages for ${{ github.sha }}"
-        git push https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:gh-pages --force --follow-tags -v
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v5
